@@ -21,7 +21,7 @@
     <div class="content">
       <h2 class="label">Write Up</h2>
       <section class="single">
-        <h4 class="title">Single Scale</h4>
+        <h3 class="title">Single Scale</h3>
           <div class="inner">
             <article class="explanation" style="margin-right: 770px">
               <p> Used the skeleton Matlab code to split the given image into thirds and then found the correlation of G and R slices; the offsets are accounted for since the function normxcorr2() has padding. G is then created again to decrease the padding, this is done twice. This same process is repeated for the R and B slices. Then set the values of the new slices to one image, crop the edges and show the image.  
@@ -40,7 +40,7 @@ I chose this method for the simple strategy because it seems to be the most stra
           </div>
       </section>
       <section class="multi">
-         <h4 class="title">Muti Scale</h4>
+         <h3 class="title">Muti Scale</h3>
          <div class="inner">
            <article class="explanation" style="margin-right: 770px;">
              <p>The algorithm divides the original image into thirds and then blurs each slice, after which each slice is resize by a factor of .5 - shrinking each image. The program is then supposed to run a multi-dimensional alignment on the three images; <u>however I could not figure out how to do this</u>. The offsets calculated are doubled to account for the original image sizes. The program then runs the same alignment algorithm for the three slices and outputs the result.<u>also could not figure out how to resize for 'newColorImage()' once resized'.</u>
@@ -61,6 +61,9 @@ I chose this method for the simple strategy because it seems to be the most stra
              </div>
              <div class="red-image">
                <img class="multi-result img-responsive pull-left" scr="images/fruitsR.jpg" alt="Fruits R" style="width: 400px; height: 240px;">
+             </div>
+             <div class="disclaimer">
+               <h5>*Images are enlarged to emphasize blurring</h5>
              </div>
            </div>
       </section>
