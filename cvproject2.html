@@ -33,6 +33,8 @@
 		    the first image I used fspecial() because the structure of
 		    the method allows for a cut-off frequency, plus when I tried
 		    to implement a previous blurring technique it did not work.
+	            I moved the the imgaussfilt() method instead which still
+	            allowed for a cutoff frequency.
 		    I calculated the high frequency image by taking 1-Gaussian
 		    of the image instead of performing separate calculations.
 		    The original align_images code confused me because its 
@@ -53,8 +55,8 @@
 		     well as align the images. --FINISH DESCRIPTION--
                 </p>
               </article>
-              <footer class="code" style="background-color: black; color: white; text-align: center;">Matlab code can be found <a href="assets/cvproject2.pdf">here</a></footer>
             </div>
+	  <footer class="code" style="background-color: black; color: white; text-align: center;">Matlab code can be found <a href="assets/cvproject2.pdf">here</a></footer>
 	</article>
       </div>
     </artcile>
