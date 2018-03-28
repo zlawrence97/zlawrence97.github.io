@@ -30,13 +30,9 @@
             <article class="explanation" style="margin-right: 570px; border-left: 200px; padding: 1em;">
               <div class="implem">
 		        <h2 class="desc">Implementation</h2>
-		          <p>At first I spent a bit of time trying to find correlation between the two images,
-		          similar to what I did in the first project to align R, G, B variations of the same
-		          photo. The same correlation function was not working on the images I had so I needed
-		          to find another way to match up similar points in both images. Of course I went down
-		          the route of SIFTing both images, Matlab does not have a method that does this but
-		          it does have a SURF method and I used this to find the 15 strongest points in each image.
-		          <br> Next, was to match the strongest points in both images to find overlap. 
+		          <p>Instead of having the input be an already rectified image, I created the 
+		          	 rectified image. First I found the SURFFeatures of each image, then matched 
+		          	 those two images with their 30 strongest points. 
 		          		<!--FINISH EXPLANATION-->
 		          </p>
 	           </div>
