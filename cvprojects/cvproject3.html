@@ -1,1 +1,120 @@
+<html>
+<title>Comuter Vision</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin|Arvo|Source+Serif+Pro">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body{
+      font-family:Arvo;
+    }
+  </style> 
+</head>
+
+<body>
+  <header class="header" style="padding: 1em; clear: left; text-align:center; background-color:black; color:white;">
+    <h1 class="title">Project 3 - Stereo Hybrid</h1>
+    <h3 class="naem">by: Zuri Lawrence</h3>
+  </header>
+  <div class="project">
+    <article class="full-explanation">
+      <div class="content">
+        <article class="write-up">
+          <div class="inner">
+            <nav class= "result" style="float: right; max-width: 600px; margin: 0px; padding: 1em;">
+	      <img class="hybrid img responsive pull-right" src="images/hybrid.jpg" alt="project2-result" style="width: 270px; height: 340px;"> 
+	      <img class="chadwick img responsive pull-right" src="images/chadwick.jpg" alt="project2-original" style="width: 270px; height: 340px;">
+	      <img class="black-panther img responsive pull-right" src="images/blackpanther.jpg" alt="project2-original" style="width: 270px; heigth: 340px;">
+            <h4 class="figure"><b>Figure 1: <b>Chadwick Boseman/Black Panther</h4>
+	    </nav>
+            <article class="explanation" style="margin-right: 570px; border-left: 50px; padding: 1em;">
+              <div class="implem">
+		<h2 class="desc">Implementation</h2>
+		  <p> Choosing two images that were already mostly aligned took
+		    about an hour and I also tried to make sure the resolutions
+		    were about the same as well. To apply the Gaussian filter to
+		    the first image I used fspecial() because the structure of
+		    the method allows for a cut-off frequency, plus when I tried
+		    to implement a previous blurring technique it did not work.
+	      I moved the the imgaussfilt() method instead which still
+	      allowed for a cutoff frequency.
+		    At first, I calculated the high frequency image by taking 1-Gaussian
+		    of the image instead of performing separate calculations.
+		    The original align_images code confused me because its 
+		    output is two separate images so every time I thought my 
+		    code was not working properly. After almost two hours (way 
+		    too long) of researching different alignment methods I got 
+		    my code to work with the original to produce the grayscale
+		    hybrid image.<br>
+		    However, the high frequency images came out white instead
+		    of being a smooth gray image so I had to fix that result.
+		    I started by attempting to run a filter over the image 
+		    instead of simply subtracting the Gaussian but that solution
+		    only made the images whiter. Eventually, after a lot of 
+		    searching through Matlab and learning about the Laplacian 
+		    filter I found that the Local Laplacian filter method
+		    does that job correctly when given the best standard 
+		    deviation.<br>
+		    <br>Note: I combined the pyramids() and hybridImage() 
+		    functions to compute the Gaussian and Laplacian pyramids as
+		    well as align the images.
+                  </p>
+	      </div>
+	      <div class="reults">
+	        <h2 class="title">Results</h2>
+            <p>My first attempt<b> Figure 1<b> was the hardest to finish and took the longest
+            because aligning the faces caused least one picture to be slanted. For all the 
+            images I tried to align it was hard if the backgrounds were different colors. If 
+		        I tried to merge the images in color and there was massive color difference, the 
+		        result would be extremely off and ruin the image; in grayscale the image would be
+		        indistinguishable so neither image could be seen from far away of close-up. 
+		        <br>As it turned out, the more simplistic the images the easier it was to merge them. 
+		        The landscapes,<b> Figure 2<b> were the easiest because they were almost the same size
+		        with the horizons in almost the same place. With <b> Figure 3 <b> the photos blended 
+		        because of the same reasons.
+		      </p>
+	      </div>
+	    </article>
+    </div>
+	</article>
+ </div>
+ </article>
+    <div class="footer">
+      <footer class="code" style="text-align: left; margin-left: 50px;">Matlab code can be found <a href="assets/cvproject2.pdf" target="_blank">here</a></footer>
+    </div>
+  </div>
+  <section class="other-results">
+    <nav class="landscape" style="float: right; max-width: 600px; margin: 0px; padding 1em;">
+      <img class="landscpe img responsive pull-right" src="images/moon-bridge.jpg" alt="second-result" style="width: 340; height: 270;">
+      <img class="moon img responsive pull-right" src="images/moon.jpg" alt="original" style="width: 340px; height: 270px;">
+      <img class="bridge img responsive pull-right" src="images/bridge.jpg" alt="original" style="width:340px; height: 270px;">
+      <h4 class="figure2"><b>Figure 2: <b>Lake at night/Boardwalk</h4>
+    </nav>
+    <nav class="landscape" style="float: right; max-width: 600px; margin: 0px; padding 1em;">
+      <img class="moon-wheel img responsive pull-right" src="images/wheel-moon.jpg" alt="second-result" style="width: 340; height: 270;">
+      <img class="moon img responsive pull-right" src="images/lightside.jpg" alt="original" style="width: 340px; height: 270px;">
+      <img class="wheel img responsive pull-right" src="images/wheel.jpg" alt="original" style="width:340px; height: 270px;">
+      <h4 class="figure3"><b>Figure 3: <b>Moon/Wheel</h4>
+    </nav>
+  </section>
+  <footer class="desc" style="border-left: 50px; text-align: pull-left; padding: 1em;">
+    <p>CSCI 4527 - Introduction to Computer Vision<br>
+       Spring 2018<br>
+       Dr. Robert Pless<br>
+    </p>
+  </footer>
+
+  <style>
+    body{
+      background-color:fefefe;
+      color:black;
+      text-align:pull-left;
+    }
+  </style>
+
+</body>
+  
+  
+</html>
