@@ -10,6 +10,19 @@
     body{
       font-family:Arvo;
     }
+    
+    .column {
+      float: left;
+      width: 33.33%;
+      padding: 5px;
+    }
+
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+    
   </style> 
 </head>
 
@@ -43,7 +56,7 @@
       </div>
     </article>
     <h4 class="depth-maps"><b>Depth Maps<b></h4>
-      <nav class= "depth-maps" style="float: left; max-width: 600px; margin: 0px; padding: 1em;">
+      <nav class= "depth-maps" style="float: left; max-width: 1000px; margin: 0px; padding: 1em;">
         <div class="row">
           <div class="column">
 	          <img class="hybrid img responsive pull-left" src="../images/cv3/mtns-matched.jpg" alt="depth-matched" style="width: 318px; height: 424px; margin-bottom: .5em"> 
@@ -71,19 +84,6 @@
       color:black;
       text-align:pull-left;
     }
-    
-    .column {
-      float: left;
-      width: 33.33%;
-      padding: 5px;
-    }
-
-    .row::after {
-      content: "";
-      clear: both;
-      display: table;
-    }
-    
   </style>
 
 </body>
