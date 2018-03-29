@@ -23,19 +23,21 @@
       <div class="content">
         <article class="write-up">
           <div class="inner">
-            <article class="explanation" style="margin-right: 570px; border-left: 200px; padding: 1em;">
+            <aside class="explanation" style="margin-right: 770px; border-left: 200px; padding: 1em;">
               <div class="implem">
 		        <h2 class="desc">Implementation</h2>
 		        <p>Instead of having the input be an already rectified image, I created the 
 		          	 rectified image. First I found the SURFFeatures of each image, then matched 
 		          	 those two images with their 30 strongest points. The result of aligning those
 		          	 images was the rectified image. Using this image I was able to compute the depth
-		          	 map of the image. <br>This process was done for two additional sizes (which were
+		          	 map of the image. <br>This process was done for two additional sizes, which were
 		          	 difficult to select because I wanted to make sure the dimensions were whole 
-		          	 numbers so I had to find factors of the original width and height.)
+		          	 numbers so I had to find factors of the original width and height. The depth map
+		          	 is low frequency in that the smaller the image the more visible the original photo
+		          	 can be.
 		        </p>
 	          </div>
-	        </article>
+	        </aside>
           </div>
 	    </article>
       </div>
