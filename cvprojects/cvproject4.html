@@ -58,7 +58,7 @@
 				or outputting why someone’s shot may be off in basketball.<br>
 				Tensorflow is currently an extremely popular library in the machine learning field so we decided to go this route.
 				Tensorflow uses deep learning to train on large amounts of data.  This library was perfect for our purposes.  
-				In his tutorial at https://towardsdatascience.com/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9, 
+				In his tutorial at <a href="https://towardsdatascience.com/how-to-train-your-own-object-detector-with-tensorflows-object-detector-api-bec72ecfe1d9">, 
 				Dat Tran creates a raccoon classifier with Tensorflow.  We took this tutorial as a motivation to make our own 
 				player/ball classifier.<br>
 		        </p>
@@ -92,11 +92,45 @@
 	              .record files which is the data set format that Tensorflow accepts for image analysis.<br>
 	              </p>
 	              <div class="data-gathered">
-	      			  <img class="hybrid img responsive pull-left" src="../images/cv4/data-training1.png" alt="data1" style="width: 906px; height: 618px; margin-bottom: .5em"> 
-	      			  <img class="hybrid img responsive pull-left" src="../images/cv4/data-training2.png" alt="data2" style="width: 862px; height: 610px; margin-bottom: .5em">
-          			  <img class="hybrid img responsive pull-left" src="../images/cv4/data-training3.png" alt="data3" style="width: 896px; height: 728px; margin-bottom: .5em">
-        		      <img class="hybrid img responsive pull-left" src="../images/cv4/data-training4.png" alt="data4" style="width: 913px; height: 734px; margin-bottom: .5em">
+	      			<img class="hybrid img responsive pull-left" src="../images/cv4/data-training1.png" alt="data1" style="width: 906px; height: 618px; margin-bottom: .5em"> 
+	      			<img class="hybrid img responsive pull-left" src="../images/cv4/data-training2.png" alt="data2" style="width: 862px; height: 610px; margin-bottom: .5em">
+          			<img class="hybrid img responsive pull-left" src="../images/cv4/data-training3.png" alt="data3" style="width: 896px; height: 728px; margin-bottom: .5em">
+        		    <img class="hybrid img responsive pull-left" src="../images/cv4/data-training4.png" alt="data4" style="width: 913px; height: 734px; margin-bottom: .5em">
+				  </div>
+				  <div class="model-training">
+				    <h3>Model Training</h3>
+				    <p>The Object Detection API had to be downloaded separately from TensorFlow.  This API holds all the functions 
+				    and capabilities we needed to utilize to train our model.  We did utilize a previously trained model that was 
+				    trained for other objects as it holds parameters that can take a few days to obtain if we started a training job
+				    from scratch. It’s much faster to build off a network that has already been trained than to start from scratch.
+				    This method is often known as transfer learning. TensorFlow is one of the first libraries to make transfer learn
+				    ing somewhat easy to implement. We also created a label file that explicitly states each of the classes that we
+				    desire to train on (basketball, soccer player, referee, etc.)<br>
+				    During a training job, TensorFlow creates multiple checkpoints. The job can be stopped at any time and can be 
+				    picked up from the last checkpoint saved. Before deploying the Object Detection API, Google trained multiple 
+				    models on different datasets and released their latest checkpoint files to the public. We’re using the resnet 
+				    model as it seemed to be the standard one that was generalized to any scenario a user wanted to configure the 
+				    model to.  This model was placed in its own folder in the Object Detection API’s main directory. The corresponding 
+				    config file in the training directory was modified to read training and test data from the data folder, read 
+				    the previously trained checkpoint file from the downloaded model’s folder, and read the label .pbtxt file from 
+				    the training directory.<br> 
+				    TensorFlow uses configuration files to specify initializations of messages within protobuf files. These protobuf 
+				    files basically act as data structures that can be read from most languages using Google’s Protobuf API. 
+				    Tensorflow libraries use protobuf files because its library is compatible with both Python and C++. Therefore, 
+				    this enables developers to be able to easily transfer models and configurations when using one language or the 
+				    other. The configurations specified in the .config file end up dictating the design of the neural net through 
+				    the abstracted protobuf files. Moreover, once the API was set up as needed, the train.py script from the API 
+				    was run. While running we could view the status of the training job using TensorBoard, a program that visualizes
+				     the progression of a model’s training. The most important piece that we kept an eye out for was the loss 
+				     function. We wanted to run the job until we saw the loss function plateauing around 1 or preferably less than 1.
+				     <br>
+				    </p>
 				  </div>          
+	          </div>
+	          <div class="implementation">
+	            <h2 class="title">Implementation and Analysis</h2>
+	            <p>
+	            </p>
 	          </div>
 	        </aside>
           </div>
