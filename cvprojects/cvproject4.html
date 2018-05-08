@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="styles.css">
   <style>
     body{
-      font-family:Arvo;
+      font-family:Cabin;
     }
     
     .column {
@@ -79,6 +79,19 @@
 	          </div>
 	          <div class="approach">
 	            <h2 class="title">Our Approach"</h2>
+	              <h3>Data Handling</h3>
+	              <p>As previously mentioned, TensorFlow was used for our machine learning purposes. While the installation of the 
+	              library was fairly simple, the steps required to train the object detection model were fairly convoluted. The 
+	              first step we made towards making our model was scraping, downloading, and labeling images from Google Images 
+	              and sports highlight videos. Together, we gathered and labeled nearly 500 images from all four sports we wanted 
+	              to detect players, balls, and referees from. The labels for all the images were saved in .xml files that were 
+	              then converted to a single .csv file. This .csv file was then split up into testing and training .csv files. 10% 
+	              of the dataset was used for training, and 10% of the dataset was used for testing. The reason for this split is 
+	              so that we don’t test on the same data that we trained on. That would be counterproductive to ensuring that the 
+	              model we created is actually applicable in a real world setting. These .csv files were then converted into 
+	              .record files which is the data set format that Tensorflow accepts for image analysis.<br>
+	              </p>
+	              <
 	          </div>
 	        </aside>
           </div>
