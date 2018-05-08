@@ -130,8 +130,37 @@
 	          </div>
 	          <div class="implementation">
 	            <h2 class="title">Implementation and Analysis</h2>
-	            <p>
+	            <p>Once the model reached our desired loss of approximately .3 after about 6 hours of training, we stopped the 
+	            training and froze the most recent model checkpoint and saved it as a .pb file (or our model file). This .pb file 
+	            is then used in our video object detection program alongside the label .pbtxt file. Our video object detection 
+	            program then takes every frame of an input video and runs it through a visualizer function provided by the Object 
+	            Detection API. This visualization function uses the label map as well as the exported model and then returns the 
+	            same image with boxes enclosing the objects that were found in that frame along with its confidence in the classification. 
+	            These modified frames are then added to a new output video. This process of extracting, analyzing, and appending 
+	            each frame takes approximately 5-8 seconds.<br>
+	            The overall classification accuracy of the model for a real-world application was good for basketball, soccer, and 
+	            tennis. However, some sports posed a difficulty.  The classification of baseball players and baseballs was hit or 
+	            miss (pun intended) most of the time. This is mainly due to the to the fact that our trained data set was relatively
+	            small compared to what a neural network needs to train for extreme accuracy across all mediums. For example, when 
+	            zooming out into the field, baseball players were often classified as soccer players probably because we had more 
+	            data on soccer players in a zoomed out view than we did for baseball players. The simple solution to this would be 
+	            to get more data on baseball players to train on, but as this is a three person project and we had 2-3 weeks, we 
+	            suffice it to say that if this project is to take a step forward, more training data will be needed.<br>
 	            </p>
+	            <h3>Results</h3>
+	            <div class="result-images">
+	              <p>Before</p>
+	              <img class="hybrid img responsive pull-left" src="../images/cv4/jordan-before.jpg" alt="data1" style="width: 960px; height: 540px; margin-bottom: .5em">
+	              <p>After</p>
+	              <img class="hybrid img responsive pull-left" src="../images/cv4/jordan.jpg" alt="data1" style="width: 960px; height: 540px; margin-bottom: .5em">
+	              <img class="hybrid img responsive pull-left" src="../images/cv4/soccer-wide.png" alt="data1" style="width: 720px; height: 450px; margin-bottom: .5em">
+	              <img class="hybrid img responsive pull-left" src="../images/cv4/pitcher.png" alt="data1" style="width: 720px; height: 450px; margin-bottom: .5em">
+	              <h4>Tracking Results</h4>
+	              <img class="hybrid img responsive pull-left" src="../images/cv4/Baseball Gif.gif" alt="data1" style="width: 640px; height: 320px; margin-bottom: .5em">
+	              <img class="hybrid img responsive pull-left" src="../images/cv4/Basketball Gif.gif" alt="data1" style="width: 640px; height: 320px; margin-bottom: .5em">
+	              <img class="hybrid img responsive pull-left" src="../images/cv4/Soccer Gif.gif" alt="data1" style="width: 640px; height: 320px; margin-bottom: .5em">
+	              <img class="hybrid img responsive pull-left" src="../images/cv4/Tennis Gif.gif" alt="data1" style="width: 640px; height: 320px; margin-bottom: .5em">
+	            </div>
 	          </div>
 	        </aside>
           </div>
